@@ -12,6 +12,7 @@ This project is a web application for detecting brain tumors from MRI images. It
 5. [Model and Evaluation](#model-and-evaluation)
 6. [File Structure](#file-structure)
 7. [Detailed Explanation](#detailed-explanation)
+8. [Using Docker](#using-docker)
 
 ## Project Overview
 This application uses a deep learning model to detect brain tumors from MRI images. The application is built with Flask and provides an interface for users to upload MRI images, preprocess them, and get predictions about the presence of brain tumors.
@@ -157,9 +158,9 @@ The training process is documented in detail in the Jupyter notebook `FINAL.ipyn
 
 The preprocessing steps performed in the notebook for training the model include:
 
-1. **Loading Data**: The MRI images are loaded from the specified directories and split into training, validation,
+1. **Loading Data**: The MRI images are loaded
 
- and test sets.
+ from the specified directories and split into training, validation, and test sets.
 
 2. **Cropping Images**: The `crop_imgs` function is used to crop the images to isolate the brain region. This function performs grayscale conversion, Gaussian blur, thresholding, contour detection, extreme points identification, and cropping.
 
@@ -198,6 +199,32 @@ The preprocessing steps in the notebook ensure that the input images are prepare
     └── img/
         └── (all images)
 ```
+
+## Using Docker
+
+To build the Docker image for the Brain Tumor Detection Web Application, We started by creating a Dockerfile that outlines the steps to set up the environment. The Dockerfile begins with a base image, such as python:3.9-slim, and installs the necessary dependencies listed in the requirements.txt file. We then copied the application code, including the Flask app, preprocessing scripts, and model files, into the Docker image. Additionally, We set up the necessary environment variables and exposed the port 5000 to match the Flask application's default port. After ensuring everything was configured correctly, We built the Docker image using the command docker build -t hanarefaat/braintumor:tag ., which packaged the application into a container image ready for deployment. This process ensures that the application can run consistently across different environments without the need for manual setup.
+To simplify the setup process and ensure consistency across different environments, you can use Docker to run the application. Follow these steps to use Docker:
+
+### Pull the Docker Image
+
+1. **Pull the Docker image from Docker Hub:**
+    ```bash
+    docker pull hanarefaat/braintumor:tag
+    ```
+
+### Run the Docker Container
+
+2. **Run the Docker container:**
+    ```bash
+    docker run -p 5000:5000 hanarefaat/braintumor:tag
+    ```
+
+### Access the Application
+
+3. **Access the application:**
+    - Open your web browser and go to `http://127.0.0.1:5000`.
+
+The Docker image includes all the dependencies and configurations required to run the application, making it easy to set up and run the application in a consistent environment.
 
 ## Contributing
 Feel free to contribute to this project by submitting issues or pull requests.
