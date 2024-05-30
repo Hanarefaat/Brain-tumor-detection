@@ -42,7 +42,7 @@ This application uses a deep learning model to detect brain tumors from MRI imag
     ```
 
 3. **Download the dataset:**
-    - Download the brain tumor detection dataset from [Kaggle](https://www.kaggle.com/datasets/abhranta/brain-tumor-detection-mri) and place it in your project directory.
+    - Download the brain tumor detection dataset from [Kaggle](https://www.kaggle.com/datasets/abhranta/brain-tumor-detection-mri) and place it in your project directory. This dataset contains MRI images of brain tumors categorized into two classes: "No" for images without a tumor and "Yes" for images with a tumor.
 
 4. **Download the trained model:**
     - Download the trained model from [this drive link](https://drive.google.com/file/d/1mqzfVVuAPA8qaHhA1t9CLdLTkxmXv6ln/view?usp=sharing) and place it in your project directory.
@@ -157,11 +157,11 @@ The training process is documented in detail in the Jupyter notebook `FINAL.ipyn
 
 The preprocessing steps performed in the notebook for training the model include:
 
-1. **Loading Data**: The MRI images are loaded from the specified directories and split into training, validation, and test sets.
+1. **Loading Data**: The MRI images are loaded from the specified directories and split into training, validation,
 
-2. **Cropping Images**: The `crop_imgs` function is used to crop the images to isolate the brain region. This
+ and test sets.
 
- function performs grayscale conversion, Gaussian blur, thresholding, contour detection, extreme points identification, and cropping.
+2. **Cropping Images**: The `crop_imgs` function is used to crop the images to isolate the brain region. This function performs grayscale conversion, Gaussian blur, thresholding, contour detection, extreme points identification, and cropping.
 
 3. **Image Augmentation**: Data augmentation techniques are applied to the training images using the `ImageDataGenerator` class from Keras. This includes rotations, shifts, flips, brightness adjustments, and scaling.
 
@@ -204,3 +204,4 @@ Feel free to contribute to this project by submitting issues or pull requests.
 
 ## License
 This project is licensed under the MIT License.
+
