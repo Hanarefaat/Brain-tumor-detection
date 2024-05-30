@@ -33,8 +33,8 @@ This application uses a deep learning model to detect brain tumors from MRI imag
 
 1. **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd <repository-name>
+    git clone <https://github.com/Hanarefaat/Brain-tumor-detection>
+    cd <Brain-tumor-detection>
     ```
 
 2. **Install the required libraries:**
