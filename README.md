@@ -228,7 +228,7 @@ To simplify the setup process and ensure consistency across different environmen
 The Docker image includes all the dependencies and configurations required to run the application, making it easy to set up and run the application in a consistent environment.
 
 ## Contributing
-Feel free to contribute to this project by submitting issues or pull requests.
+Feel free to contribute to this project by pulling the github or docker
 
 ## License
 This project is licensed under the MIT License.
